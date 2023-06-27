@@ -26,7 +26,6 @@ void swap1(int *x, int *y)
  * @size: The number of elements in the array.
  */
 
-
 void bubble_sort(int *array, size_t size)
 {
 	int flag;
@@ -37,9 +36,10 @@ void bubble_sort(int *array, size_t size)
 	return;
 
 	flag = 1;
-	for (i = 0; flag == 1; i++) /* iterate until no swaps are made */
+	for (i = 0; flag == 1; i++)
 	{
-		flag = 0; /* reset flag to 0 at the beginning of each iteration */
+		/* reset flag to 0 at the beginning of each iteration */
+		flag = 0;
 		for (i = 0; i < size - 1; i++) /* iterate over the array */
 		{
 			/* if current element is greater than next */
@@ -47,8 +47,8 @@ void bubble_sort(int *array, size_t size)
 			{
 				/* swap current and next elements */
 				swap1(&array[i], &array[i + 1]);
-
-				flag = 1; /* set flag to 1 to indicate swap was made */
+				/* set flag to 1 to indicate swap was made */
+				flag = 1;
 				print_array(array, size);
 			}
 		}
