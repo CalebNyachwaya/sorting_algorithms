@@ -8,31 +8,31 @@
  */
 void swapNodes(listint_t *node_b, listint_t *node_c, listint_t **list)
 {
-        listint_t *node_a, *node_d;
+	listint_t *node_a, *node_d;
 
-        if (node_b == NULL || node_c == NULL)
-        return;
+	if (node_b == NULL || node_c == NULL)
+	return;
 
-        /* Verify that nodes point somewhere */
-        node_a = node_b->prev;
-        node_d = node_c->next;
+	/* Verify that nodes point somewhere */
+	node_a = node_b->prev;
+	node_d = node_c->next;
 
-        /* Update previous nodes' next pointers */
-        if (node_a != NULL)
-        node_a->next = node_c;
+	/* Update previous nodes' next pointers */
+	if (node_a != NULL)
+	node_a->next = node_c;
 
-        /* Update next nodes' previous pointers */
-        if (node_d != NULL)
-        node_d->prev = node_b;
+	/* Update next nodes' previous pointers */
+	if (node_d != NULL)
+	node_d->prev = node_b;
 
-        /* Swap node pointers */
-        node_c->next = node_b;
-        node_b->next = node_d;
-        node_b->prev = node_c;
-        node_c->prev = node_a;
+	/* Swap node pointers */
+	node_c->next = node_b;
+	node_b->next = node_d;
+	node_b->prev = node_c;
+	node_c->prev = node_a;
 
-        if (node_b == *list)
-        *list = node_c;
+	if (node_b == *list)
+	*list = node_c;
 }
 
 /**
@@ -44,6 +44,7 @@ void swapNodes(listint_t *node_b, listint_t *node_c, listint_t **list)
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *currentNode, *prevNode;
+
 	if (!list || !*list || !(*list)->next)
 	return;
 
